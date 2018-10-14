@@ -86,7 +86,7 @@ int main()
                 bet = money;
             }
             Menu(money, bet, 0);
-            if((money == 0) || (trousers == 1)){
+            if((money == 0) && (trousers == 1)){
             cout << "Do you want to sell your trousers for 10$? Enter OK if so" << endl;
             cin >> command;
             if(command == "OK"){
