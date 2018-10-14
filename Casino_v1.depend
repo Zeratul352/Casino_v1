@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1539507965 source:d:\download\01\casino_v1\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<string>
+	<cmath>
+	<iomanip>
+
