@@ -59,14 +59,15 @@ void Menu(int money, int bet, int type){// this function types menu in 2 variant
 
 int main()
 {
-    int bet, money;
+    int bet, money,trousers;
     string command;
     money = 100;// actually you can change this parameter to have more money at start
     bet = money / 10;
+    trousers = 1;// i hope you will enter the casino in trousers...
     cout << "Welcome to Casino!" << endl;
     cout << "Here you can become incredibly rich! " << endl;
     Menu(money, bet, 1);// starting menu output
-    while(money > 0){
+    while(1){
         cin >> command;// what will you do now?
         if((command == "m") || (command == "M")){// just type menu
             Menu(money, bet, 1);// whole menu output
@@ -85,16 +86,29 @@ int main()
                 bet = money;
             }
             Menu(money, bet, 0);
-            continue;
+            if((money == 0) || (trousers == 1)){
+            cout << "Do you want to sell your trousers for 10$? Enter OK if so" << endl;
+            cin >> command;
+            if(command == "OK"){
+                money = 10;
+                trousers = 0;
+                continue;
+            }else{
+                break;
+            }
+        }
         }else{// you will behave yourself good, won't you?
             cout << "Enter correct command please" << endl;
         }
+
     }
     if(money == 0){// sorry!
         cout << "You have no more money to continue playing!" << endl;
+        trousers == 1? cout << "At least you have your trousers with you)"<< endl: cout << "And you don't have your trousers any more!" << endl;
         cout << "Next time you will be more lucky!" << endl;
     }else{// at least you have something!
         cout << "You leave the casino with " << money << "$ in your wallet!" << endl;
+        trousers == 1? cout << "And you have your trousers with you)"<< endl: cout << "But you don't have your trousers any more!" << endl;
     }
     cout << "Goodbye!" << endl;// Have a nice day!
     cout << "Return to us later!" << endl;// really, why don't you play it again?
